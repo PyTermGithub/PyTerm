@@ -2,21 +2,13 @@
 
 Start date: `24 Jan 2024` - End Date: `not complete`
 
-## Create support for folders :x:
-
-Allow folders in PyMrk/Snippets and read all files inside of folders casually, it will not matter if you have a "subfolder"
-
-After this change I will also stop pkg from destroying the folder and moving all files into PyMrk/ Snippets instead of PyMrk/Snippets/{repo name}, this is for another feature*
-
-## Stop including folders with _hidden inside of engine.Engine.files :x:
-
-This is also kind of related to the "create support for folders" task, it will just not read the contents of _hidden and will not include it on engine.Engine.files
++ :white_check_mark: = complete
++ :x: = incomplete and not in progress
++ :arrow_left: = working on currently
 
 ## work more on package installer :x:
 
 Add more paramaters and support for more package libraries (even if git is enough).
-
-* I will add the ability to delete packages which links to create support for folders
 
 ## create a command that lists all commands :white_check_mark:
 
@@ -28,7 +20,7 @@ Developers can create files with their name to be read as man pages in the comma
 
 This seems the simplest since my engine already has the tools inside of `pymrk_convert()` half done for me
 
-## create a tool for TODO pages :x:
+## create a tool for TODO pages :arrow_left:
 
 Too lazy to do it myself so why not use python for me (I had to write this myself)
 also helps in consistensy
@@ -40,9 +32,8 @@ Called I don't know maybe like border controll
 
 ### Has a trust system :x:
 
-    If user doesnt give a trust for a file of 1 the computer defaults to 0.1
-    Sandbox mode runs any script with minimum trust for the user to test
+    If user doesnt give a trust for a file of 1 the computer defaults to 0 (sandbox)
     
     If user gives a script a trust, it will ask if it should give 
-    that same trust to the scripts that the original script relys on,
-    saying that it has a lower trust.
+    that same trust to the scripts that the original script relys on saying
+    that those scripts has 0 trust
