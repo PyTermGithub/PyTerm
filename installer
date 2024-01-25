@@ -1,0 +1,41 @@
+import git
+import os
+import json
+import shutil
+
+repo_name = "https://github.com/UTHMN/cmd-for-terminal-v2.git".split('.git')[0].split('/')[-1]
+os.mkdir(f"./PyMrk/Snippets/{repo_name}")
+repo = git.Repo.clone_from("https://github.com/UTHMN/cmd-for-terminal-v2.git", f"./PyMrk/Snippets/{repo_name}")
+folder = os.listdir(f"./PyMrk/Snippets/{repo_name}")
+
+for i in folder:
+    if os.path.exists(f"./PyMrk/Snippets/{i}"):
+        os.remove(f"./PyMrk/Snippets/{i}")
+    shutil.move(f"./PyMrk/Snippets/{repo_name}/{i}", "./PyMrk/Snippets")
+
+os.removedirs(f"./PyMrk/Snippets/{repo_name}")
+try:
+    os.remove("./PyMrk/Snippets/.gitignore")
+except:
+    pass
+shutil.rmtree("./PyMrk/Snippets/.git")
+
+if os.path.exists("./PyMrk/Data/autorun.json"):
+    with open("./PyMrk/Data/autorun.json", 'r') as file:
+        global dat
+        global newdata
+        dat = file.read()
+        newdata = json.loads(dat)
+        proc = -1
+        for i in range(len(newdata)):
+            if newdata[i] == "installer":
+                newdata.pop(i)
+    file.close()
+    
+    try:
+        with open("./PyMrk/Data/autorun.json", 'w') as file:
+            json.dump(newdata, file, indent=2)
+        file.close()
+    except Exception as e:
+        pass
+    
