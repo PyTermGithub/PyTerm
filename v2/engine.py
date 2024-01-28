@@ -39,15 +39,6 @@ class Engine:
             cwd = os.getcwd()
             path = os.path.join(cwd, "PyMrk/Docs")
             os.makedirs(f"{path}")
-        if not os.path.exists("PyMrk/Snippets/installer"):
-            with open("PyMrk/Snippets/installer", 'w') as file:
-                global install
-                with open("installer", 'r') as ins:
-                    file_content = ins.read()
-                    install = file_content
-                ins.close()
-                file.write(install)
-            file.close()
     
     def _autorun(self):
         processes = []
@@ -66,7 +57,7 @@ class Engine:
         if not os.path.exists("./PyMrk/Data/autorun.json"):
             try:
                 with open("./PyMrk/Data/autorun.json", 'w') as file:
-                    json.dump(["installer"], file, indent=2)
+                    json.dump([""], file, indent=2)
             except Exception as e:
                 pass
         
