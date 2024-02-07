@@ -30,9 +30,6 @@ Always make sure to check your scripts before installing it, I am working on a p
 ## Safety: chance of program crashing or freezing
 The chance of this is low from scripts as it uses pythons `exec()` function so a script will either crash alone or rarely will crash the entire program.
 
-So far I have never encountered a crash (excluding errors e.g. a incorrect function etc)
-but I am using older hardware (>10 years manufacturing date)
-
 ## Folders
 I am planning on adding folder support in `PyMrk/Snippets` but so far, we have `PyMrk/Man`, `PyMrk/Snippets` and `PyMrk/Data`
 
