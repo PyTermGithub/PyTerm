@@ -3,7 +3,7 @@ PyTerm is an engine to run scripts dynamically. The name PyTerm means Python and
 I created this around December or November 2023 after learning about the python builtin function `input()`
 
 ## Installation
-To install run `sudo apt install python3 -y && git clone https://github.com/uthmn/pyterm && cd pyterm && python3 main.py` This will install python 3, and clone the repository to your current working directory.
+To install run `sudo apt install python3 -y && git clone https://github.com/uthmn/pyterm && cd pyterm` This will install python 3, and clone the repository to your current working directory.
 
 Currently there aren't any executable files but I am open to contributors creating some (note, these will be tested for the safety of other users)
 
